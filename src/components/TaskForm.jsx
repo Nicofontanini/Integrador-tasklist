@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import Styles from './TaskForm.module.css';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const TaskForm = ({ onAdd }) => {
     // Estados locales para gestionar la entrada del usuario
@@ -43,7 +45,7 @@ const TaskForm = ({ onAdd }) => {
 
         // Esto verifica que el campo de tarea no esté vacío
         if (taskName.trim() === '') {
-            alert('Por favor, ingresa el nombre de la tarea.');
+          toast.warn('Por favor, ingresa el nombre de la tarea.');
             return;
         }
 

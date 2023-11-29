@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import Titulo from './components/Titulo.jsx';
 import TaskList from './components/TaskList';
 import TaskForm from './components/TaskForm';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import './App.css';
 
 const App = () => {
@@ -20,7 +22,7 @@ const App = () => {
 
   // Función para agregar nuevas tareas al estado principal
   const addTask = (newTask) => {
-    alert('Has agregado una nueva tarea')
+    toast.success(`Has agregado una nueva tarea: ${newTask.name}`);
     setTasks((prevTasks) => [...prevTasks, newTask]);
   };
 
@@ -33,7 +35,7 @@ const App = () => {
 
   // Función para eliminar una tarea
   const deleteTask = (taskId) => {
-    alert('Has eliminado una tarea')
+    toast.error('Has eliminado una tarea');
     setTasks((prevTasks) => prevTasks.filter((task) => task.id !== taskId));
   };
 
@@ -44,8 +46,7 @@ const App = () => {
       <TaskForm onAdd={addTask} />
       {/* Este es el Componente de Lista de Tareas */}
       <TaskList tasks={tasks} onComplete={completeTask} onDelete={deleteTask} />
-     
-      
+      <ToastContainer />
     </div>
   );
 };

@@ -62,7 +62,7 @@ h4 {
         box-sizing: border-box;
         font-weight: 400;
         font-family: 'Josefin Sans', sans-serif;
-        font-size: 12px;
+        font-size: 10px;
         /* Ajusta el tamaño de la fuente para dispositivos pequeños */
         background-color: white;
     }
@@ -76,6 +76,7 @@ h4 {
         border-radius: 5px;
         background-color: rgb(255, 253, 253);
         font-family: 'Josefin Sans', sans-serif;
+        font-size: 10px;
     }
 
     .boton:hover {
