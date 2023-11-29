@@ -14,8 +14,8 @@ Este proyecto es una aplicación web de lista de tareas desarrollada con React. 
 - Interfaz amigable con Bootstrap para un diseño atractivo y responsivo.
 
 ## Capturas de Pantalla
-![Captura de Pantalla 1](screenshot1.png)
-![Captura de Pantalla 2](screenshot2.png)
+![Captura de Pantalla 1](https://drive.google.com/uc?export=view&id=1JL04xuO1uykQ9MOK9LgwNZrVjwDxJJK0)
+![Captura de Pantalla 2](https://drive.google.com/file/d/10NiJb9hz_ETsxImbXae6QpTsfFm0NOa1/view?usp=drive_link)
 
 ## Tecnologías Utilizadas
 - React
@@ -32,22 +32,10 @@ Este proyecto es una aplicación web de lista de tareas desarrollada con React. 
 2. Abre tu navegador y visita `http://localhost:3000`
 
 ## Despliegue en Netlify
-Este proyecto está desplegado en Netlify. Puedes acceder a la versión en vivo [aquí](https://tu-proyecto.netlify.app).
-
-## Contribuciones
-¡Contribuciones son bienvenidas! Si encuentras algún problema o tienes sugerencias, por favor crea un problema o envía una solicitud de extracción.
+Este proyecto está desplegado en Netlify. Puedes acceder a la versión en vivo [aquí](https://tasklist-reactapp.netlify.app/)
 
 
 
-
-
-
-## 🚀 About me
-Soy Nico Fontanini full stack developer...
-
-
-## 🛠 Skills
-Javascript, HTML, CSS, Bootstrap, ReactJs, Nodejs, Express, PostgresSql, Firebase, Figma...
 
 
 ## 🔗 Links
