@@ -33,17 +33,19 @@ const App = () => {
 
   // Función para eliminar una tarea
   const deleteTask = (taskId) => {
-    alert('Has Eliminado una tarea')
+    alert('Has eliminado una tarea')
     setTasks((prevTasks) => prevTasks.filter((task) => task.id !== taskId));
   };
 
   return (
-    <div>
+    <div className='containerGeneral'>
       <Titulo />
+       {/* Este es el Componente de Formulario */}
+      <TaskForm onAdd={addTask} />
       {/* Este es el Componente de Lista de Tareas */}
       <TaskList tasks={tasks} onComplete={completeTask} onDelete={deleteTask} />
-      {/* Este es el Componente de Formulario */}
-      <TaskForm onAdd={addTask} />
+     
+      
     </div>
   );
 };

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Styles from './TaskForm.module.css';
 
 const TaskForm = ({ onAdd }) => {
     // Estados locales para gestionar la entrada del usuario
@@ -9,6 +10,32 @@ const TaskForm = ({ onAdd }) => {
     // Estas son las opciones predefinidas para niveles de dificultad y prioridad
     const difficulties = ['Fácil', 'Medio', 'Difícil'];
     const priorities = ['Baja', 'Media', 'Alta'];
+
+    const getDifficultyColor = (difficulty) => {
+        switch (difficulty) {
+          case 'Fácil':
+            return 'yellow';
+          case 'Medio':
+            return 'orange';
+          case 'Difícil':
+            return 'red';
+          default:
+            return 'white'; // Puedes cambiar el color por defecto según tus preferencias
+        }
+      };
+    
+      const getPriorityColor = (priority) => {
+        switch (priority) {
+          case 'Baja':
+            return 'yellow';
+          case 'Media':
+            return 'orange';
+          case 'Alta':
+            return 'red';
+          default:
+            return 'white'; // Puedes cambiar el color por defecto según tus preferencias
+        }
+      };
 
     // Aca Manejamos la presentación de nuevas tareas
     const handleSubmit = (e) => {
@@ -39,15 +66,16 @@ const TaskForm = ({ onAdd }) => {
     };
 
     return (
-        <form onSubmit={handleSubmit}>
-            <input
+        <form className={Styles.form} onSubmit={handleSubmit}>
+            <input className={Styles.input}
                 type="text"
                 value={taskName}
                 onChange={(e) => setTaskName(e.target.value)}
                 placeholder="Nueva tarea"
             />
             {/* Estos son los 3 Botones para niveles de dificultad */}
-            <select onChange={(e) => setDifficulty(e.target.value)} value={difficulty}>
+            <h4>Dificultad</h4>
+            <select className={Styles.select} onChange={(e) => setDifficulty(e.target.value)} value={difficulty} style={{ backgroundColor: getDifficultyColor(difficulty) }}>
                 {difficulties.map((option) => (
                     <option key={option} value={option}>
                         {option}
@@ -55,14 +83,15 @@ const TaskForm = ({ onAdd }) => {
                 ))}
             </select>
             {/* Estos son los 3 Botones para niveles de prioridad */}
-            <select onChange={(e) => setPriority(e.target.value)} value={priority}>
+            <h4>Prioridad</h4>
+            <select className={Styles.select} onChange={(e) => setPriority(e.target.value)} value={priority} style={{ backgroundColor: getPriorityColor(priority) }}>
                 {priorities.map((option) => (
                     <option key={option} value={option}>
                         {option}
                     </option>
                 ))}
             </select>
-            <button type="submit">Agregar Tarea</button>
+            <button type="submit" className={Styles.boton}>Agregar Tarea</button>
         </form>
     );
 };

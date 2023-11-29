@@ -1,10 +1,12 @@
 import React from 'react';
+import Styles from './Titulo.module.css';
+
 
 export default function titulo () {
 
     return (
-        <div>
-            <h1>TaskList</h1>
+        <div className={Styles.containerTitulo}>
+            <h1 className={Styles.Titulo}>TaskList</h1>
         </div>
     )
 }

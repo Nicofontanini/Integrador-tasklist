@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Styles from './TaskItem.module.css';
 
 const TaskItem = ({ task, onComplete, onDelete }) => {
   // Estado local para gestionar la apariencia de la tarea
@@ -17,19 +18,48 @@ const TaskItem = ({ task, onComplete, onDelete }) => {
     onDelete(task.id);
   };
 
+  const getDifficultyColor = (difficulty) => {
+    switch (difficulty) {
+      case 'Fácil':
+        return 'yellow';
+      case 'Medio':
+        return 'orange';
+      case 'Difícil':
+        return 'red';
+      default:
+        return 'black';
+    }
+  };
+
+  const getPriorityColor = (priority) => {
+    switch (priority) {
+      case 'Baja':
+        return 'yellow';
+      case 'Media':
+        return 'orange';
+      case 'Alta':
+        return 'red';
+      default:
+        return 'black';
+    }
+  };
+
   return (
     // Esto le agrega el estilo a la tarea completada
-    <li style={{ textDecoration: isCompleted ? 'line-through' : 'none' }}> 
+    <li style={{ textDecoration: isCompleted ? 'line-through' : 'none', textDecorationColor: isCompleted ? 'rgb(138, 152, 249)' : 'initial' }}>
       <div>
         <strong>{task.name}</strong>
       </div>
       <div>
-        Dificultad: {task.difficulty} - Prioridad: {task.priority}
+        Dificultad: <span style={{ color: getDifficultyColor(task.difficulty) }}>{task.difficulty}</span> - Prioridad:{' '}
+        <span style={{ color: getPriorityColor(task.priority) }}>{task.priority}</span>
       </div>
       {/* Botón para completar la tarea */}
-      <button onClick={handleComplete}>Completar</button>
+      <button className={Styles.botoncompletar} onClick={handleComplete}>Completar</button>
       {/* Botón para eliminar la tarea */}
-      <button onClick={handleDelete}>Eliminar</button>
+      <button className={Styles.botoneliminar} onClick={handleDelete}>Eliminar</button>
+
+      <hr></hr>
     </li>
   );
 };

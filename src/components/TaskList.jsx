@@ -1,9 +1,10 @@
 import React from 'react';
 import TaskItem from './TaskItem';
+import Styles from './TaskList.module.css';
 
 const TaskList = ({ tasks, onComplete, onDelete }) => {
   return (
-    <ul>
+    <ul className={tasks.length > 0 ? Styles.TaskList : Styles.TaskListEmpty}>
       {/* Mapear sobre la lista de tareas y renderizar un componente TaskItem por cada tarea */}
       {tasks.map((task) => (
         <TaskItem key={task.id} task={task} onComplete={onComplete} onDelete={onDelete} />

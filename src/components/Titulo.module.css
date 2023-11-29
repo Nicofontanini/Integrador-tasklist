@@ -1,0 +1,9 @@
+.containerTitulo{
+    margin-top: 15px;
+}
+
+.containerTitulo{
+   color:hsl(0, 0%, 98%);
+   font-size: 30px;
+   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
