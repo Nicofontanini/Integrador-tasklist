@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Styles from './TaskForm.module.css';
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const TaskForm = ({ onAdd }) => {
